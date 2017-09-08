@@ -1,0 +1,16 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+	<h1>
+		List of all users
+	</h1>  
+</div>
+
+<div>
+	<ng-container *ngFor="let user of usersData">
+		<h2>{{ user.name }}</h2>
+		<h3>{{ user.address.city }}</h3>
+		<h3>{{ user.address.street }}</h3>
+		<h3>{{ user.address.suite }}</h3>
+		<h3>{{ user.address.zipcode }}</h3>
+	</ng-container>
+</div>  
