@@ -4,10 +4,12 @@ import { HttpModule } from '@angular/http';
 import { DataService } from './data.service';
 
 import { AppComponent } from './app.component';
+import { UsersDataComponent } from './users-data/users-data.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UsersDataComponent
   ],
   imports: [
     BrowserModule,

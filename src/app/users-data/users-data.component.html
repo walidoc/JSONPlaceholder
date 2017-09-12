@@ -1,0 +1,28 @@
+<ul>
+    <li style="list-style-type: none;" class="span5 clearfix">
+	    <div class="thumbnail clearfix">
+			<div class="caption">
+				<h4>      
+				<a href="#">{{ user.name }}</a>
+				</h4>
+				<small><b>City: </b>{{user.address.city}}</small> <br> 
+				<small><b>Street: </b>{{ user.address.street }}</small>  <br> 
+				<small><b>Suite: </b>{{ user.address.suite }}</small>  <br> 
+				<small><b>Zipcode: </b>{{ user.address.zipcode }}</small>  <br> 
+				<button type="button" (click)='getAlbum(user.id)' class="btn btn-link">Albums</button> <br>
+				<ng-container *ngIf="showAlbums">
+					<ng-container *ngFor="let album of userAlbum">
+						<small><b>Album id: </b>{{ album.id }}</small>
+						<small><b>Album title: </b>{{ album.title }}</small> 
+						<button type="button" (click)='getPhotos(album.id)' class="btn btn-link">Photos</button> <br>
+						<ng-container *ngIf="showPhotos[album.id]">
+							<ng-container *ngFor="let photo of albumPhotos[album.id]">
+								<img [src]="photo.thumbnailUrl" class="img-thumbnail" alt="photo.title" width="150" height="150">
+							</ng-container> 
+						</ng-container> <br>
+					</ng-container>
+				</ng-container>
+			</div>
+		</div>
+	</li>
+</ul>

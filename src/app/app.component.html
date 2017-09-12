@@ -5,14 +5,12 @@
 	</h1>  
 </div>
 
-<div>
-	<ng-container *ngFor="let user of usersData">
-		<h3>{{ user.name }}</h3>
-		<h4>{{ user.address.city }}</h4>
-		<h4>{{ user.address.street }}</h4>
-		<h4>{{ user.address.suite }}</h4>
-		<h4>{{ user.address.zipcode }}</h4>
-		<h4 (click)='showAlbum(user.id)' >album</h4>
-		<h4 (click)='showPhotos(user.id)' >photos</h4>
-	</ng-container>
-</div>  
+<div class="container">
+	<div class="row">
+        <div class="span12">
+    		<ng-container *ngFor="let user of usersData">
+				<app-users-data [user]="user" ></app-users-data>
+            </ng-container>
+        </div>
+	</div>
+</div>
